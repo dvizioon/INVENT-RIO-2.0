@@ -1,0 +1,22 @@
+{
+  "name": "gerenciador_estoque",
+  "version": "1.0.0",
+  "description": "Gerenciador de Estoque ",
+  "main": "index.js",
+"scripts": {
+  "start": "electron .",
+  "pack": "electron-packager . --overwrite --asar --platform=win32 --arch=x64 --out=release-builds",
+  "dist": "electron-packager . 'Inventário 2.0' --platform=win32 --arch=x64 --out=release-builds --overwrite --executable-name='Inventário 2.0' icon=Assets/app.ico"
+},
+  "author": "Daniel Estevão Martins Mendes",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron/packager": "^18.1.3",
+    "electron": "^29.1.1"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
