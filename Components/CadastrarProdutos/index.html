@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produtos</title>
+    <!-- Adicione os links para o Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-lshYxTuDWc+J6zCNUFdBRWBSlU7wfsDy7qP8Wr1K5Xx1yQlxKS62e16vzAOWl0M2" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Novo Produto</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="productName" class="form-label">Nome do Produto</label>
+                        <input type="text" class="form-control" id="productName" name="productName" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="productPrice" class="form-label">Preço</label>
+                        <input type="number" class="form-control" id="productPrice" name="productPrice" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="productCode" class="form-label">Código</label>
+                        <input type="text" class="form-control" id="productCode" name="productCode" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="productDate" class="form-label">Data</label>
+                        <input type="date" class="form-control" id="productDate" name="productDate" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="productSection" class="form-label">Seção</label>
+                        <select class="form-select" id="productSection" name="productSection" required>
+                            <option selected disabled>Selecione uma opção</option>
+                            <!-- Adicione mais opções conforme necessário -->
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="cadastrarProdutos">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary mt-3" onclick="generateRandomValues()">Gerar Valores
+        Aleatórios</button>
+
+    <!-- Adicione os scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-GfjkOE+Kk3h8t/cU+0KTp4dI7Jv3A+X+qbYEKRjyQfMGyF3v/VpW5fI5EX+ntZKv"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-OTbhPMIxFvCigV8v7Dw+tH+rpzW/22aPPZSvwYTWNzAp3PiCk7rsE3cXor6D1taI"
+        crossorigin="anonymous"></script>
+
+        <script src="../Components/CadastrarProdutos/script/CriarProduto.js"></script>
+        <script src="../Components/CadastrarProdutos/script/GerarValores.js"></script>
+
+</body>
+
+</html>
