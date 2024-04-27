@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário Pontiguar</title>
+    <!-- Incluindo o CSS do Bootstrap 5 -->
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluindo o CSS do Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    
+    <style>
+        /* Adicionando estilo personalizado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .containerSection {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100vw;
+            height: 100vh;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .contenteButton {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-pontiguar {
+            background-color: #ffcccc;
+            border-color: #ff6666;
+            color: #ff3333;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .btn-pontiguar:hover {
+            background-color: #faa4a4;
+            border-color: #ff4848;
+            color: #000000;
+        }
+
+        /* Estilos para a web view */
+        .web-view {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Barra superior da web view */
+        .web-view-header {
+            height: 40px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        /* Estilos para o conteúdo da web view */
+        .web-view-content {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="containerSection">
+        
+        <!-- Div para os botões e o título -->
+        <div class="contenteButton">
+
+            <div>
+                <img src="../Assets/Logo.png" alt="Logotipo Pontiguar" class="logo">
+            </div>
+
+            <h1 id="gerenciadorProduto"></h1>
+            <button class="btn btn-pontiguar" onclick="carregarcomponente('../Components/CadastrarProdutos/index.html')"><i class="fas fa-shopping-cart"></i> Cadastrar Produtos</button>
+            <button class="btn btn-pontiguar" onclick="carregarcomponente('../Components/CadastrarSecao/index.html')"><i class="fas fa-warehouse"></i> Cadastrar Seções</button>
+            <button class="btn btn-pontiguar" onclick="carregarcomponente('../Components/CodigoProduto/index.html')"><i class="fas fa-barcode"></i> Código do Produto</button>
+        </div>
+
+        <div class="web-view">
+            <!-- Barra superior da web view -->
+            <div class="web-view-header">Web View</div>
+            <!-- Conteúdo da web view -->
+            <div class="web-view-content"></div>
+        </div>
+    </div>
+
+    <!-- Incluindo o JavaScript do Bootstrap 5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Incluindo o JavaScript do Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Config/Session.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Texto que queremos animar
+            var texto = "Inventário 2.0";
+            var velocidade = 100; // Velocidade de escrita em milissegundos
+            var i = 0;
+
+            function escreverTexto() {
+                if (i < texto.length) {
+                    // Adiciona um caractere ao texto a cada velocidade definida
+                    $("#gerenciadorProduto").append(texto.charAt(i));
+                    i++;
+                    setTimeout(escreverTexto, velocidade);
+                }
+            }
+
+            // Inicia a animação após o carregamento da página
+            escreverTexto();
+        });
+
+    </script>
+</body>
+
+</html>
